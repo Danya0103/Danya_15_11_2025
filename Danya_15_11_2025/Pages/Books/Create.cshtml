@@ -1,5 +1,5 @@
 ﻿@page
-@model Danya_15_11_2025.Pages.Books.Create
+@model Danya_15_11_2025.Pages.Books.CreateModel
 
 @{
     Layout = null;
@@ -9,11 +9,19 @@
 
 <html>
 <head>
-    <title></title>
+    <title>Create</title>
 </head>
 <body>
-<div>
+<h1> Create book </h1>
+<form method="post">
+    <label>Title:</label>
+    <input asp-for="BookItem.Title" class="form-control">
+    <label>Author:</label>
+    <input asp-for="BookItem.Author" class="form-control">
+    <label>Year:</label>
+    <input asp-for="BookItem.Year" class="form-control">
+    <button type="submit" class="btn btn-success mt-2">Add</button>
     
-</div>
+</form>
 </body>
 </html>

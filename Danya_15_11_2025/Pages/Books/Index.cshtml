@@ -15,6 +15,30 @@
 <body>
     <h1>Books</h1>
 <a asp-page="Create" class="btn btn-primary">Add Book</a>
-<table></table>
+<table>
+    <thead>
+    <tr>
+        <th>Title</th> 
+        <th>Author</th>
+        <th>Year</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var b in Model.Books)
+    {
+        <tr>
+            <td>@b.Title</td>
+            <td>@b.Author</td>
+            <td>@b.Year</td>
+            <td>
+                <a asp-page="Edit" asp-route-id="@b.ID">Edit</a>
+                <a asp-page="Delete" asp-route-id="@b.ID">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+    
+</table>
 </body>
 </html>

@@ -1,5 +1,5 @@
-﻿@page
-@model Danya_15_11_2025.Pages.Books.Delete
+﻿@page "{id:int}";
+@model Danya_15_11_2025.Pages.Books.DeleteModel
 
 @{
     Layout = null;
@@ -9,11 +9,17 @@
 
 <html>
 <head>
-    <title></title>
+    <title>Delete page</title>
 </head>
 <body>
-<div>
-    
-</div>
+<h1>Page for delete</h1>
+
+<p>Do you really want delete <b>"@Model.bookItem.Title"</b> ?</p>
+<form method="post">
+    <button class="btn btn-danger">
+        Delete
+    </button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+</form>
 </body>
 </html>
